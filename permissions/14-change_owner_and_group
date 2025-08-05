@@ -1,2 +1,7 @@
 #!/bin/bash
-chown -R vincent:staff .
+for file in *; do
+  if [ "$file" != "14-change_owner_and_group" ]; then
+    chown vincent:staff "$file" 2>/dev/null
+  fi
+done
+
